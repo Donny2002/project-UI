@@ -426,7 +426,7 @@
 					<b class="arrow"></b>
 
 					<ul class="submenu">
-						<li class="">
+						<li class="active">
 							<a href="registmenu.html">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Menu Board
@@ -435,7 +435,7 @@
 							<b class="arrow"></b>
 						</li>
 
-						<li class="active">
+						<li class="">
 							<a href="registevent.html">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Event Board
@@ -651,7 +651,7 @@
 								디지털 보드 관리
 								<small>
 									<i class="ace-icon fa fa-angle-double-right"></i>
-									이벤트 보드 상세 입력
+									메뉴 보드 상세 내용
 								</small>
 							</h1>
 						</div><!-- /.page-header -->
@@ -671,83 +671,148 @@
 									<div class="space-4"></div>
 									
 									<div class="form-group">
-										<label class="col-sm-2 control-label no-padding-right" for="eventWindow">  이벤트 템플릿</label>
+										<label class="col-sm-2 control-label no-padding-right" for="menuWindow">  메뉴 템플릿</label>
 
 										<div class="col-sm-5">
-											<input type="text" id="eventWindow" name="etpno" class="col-xs-12" value="${template.title}" placeholder="이벤트 템플릿" />
+											<input type="text" id="menuWindow" name="etpno" class="col-xs-12" value="${template.벨류값}" placeholder="메뉴 템플릿" />
 										</div>
 									</div>
 									
 									<div class="space-4"></div>
 									
 									<div class="form-group">
-										<label class="col-sm-2 control-label no-padding-right" for="wineventTitle">  이벤트보드 제목</label>
+										<label class="col-sm-2 control-label no-padding-right" for="wineventTitle">  메뉴보드 제목</label>
 
 										<div class="col-sm-5">
-											<input type="text" id="wineventTitle" name="title" class="col-xs-12" value="" placeholder="이벤트보드 제목" />
+											<input type="text" id="winmenuTitle" name="winmenuTitle" class="col-xs-12" value="" placeholder="메뉴보드 제목" />
 										</div>
 									</div>
 									
 									<div class="space-4"></div>
 									
 									<div class="form-group">
-										<label class="col-sm-2 control-label no-padding-right" for="eventSelect"> 이벤트 분류</label>
-
-										<div class="col-sm-5">
-											<input type="text" id="eventSelect" name="type" class="col-xs-12" value="" placeholder="어떤 이벤트" />
-										</div>
+										<label class="col-sm-2 control-label no-padding-right"> 상세 메뉴정보</label>
 									</div>
 									
-									<div class="space-4"></div>
 									
-									<div class="form-group">
-										<label class="col-sm-2 control-label no-padding-right" for="from"> 행사 시작일</label>
+										<div class="accordion-style1 panel-group" id="accordian">
+											<div class="panel panel-defult"> <!-- forEach? -->
+												<div class="panel-heading">
+													<h4 class="panel-title">
 
-										<div class="col-sm-5">
-											<input type="text" id="from" name="startdate" class="col-xs-12" value="" placeholder="행사 시작일" />
-										</div>
-									</div>
-									
-									<div class="space-4"></div>
-									
-									<div class="form-group">
-										<label class="col-sm-2 control-label no-padding-right" for="to"> 행사 종료일</label>
-
-										<div class="col-sm-5">
-											<input type="text" id="to" name="enddate" class="col-xs-12" value="" placeholder="행사 종료일" />
-										</div>
-									</div>
-									
-									<div class="space-4"></div>
-									
-									<div class="form-group">
-										<label class="col-sm-2 control-label no-padding-right" for="wineventTitle"> 중요 어필 포인트</label>
-
-										<div class="col-sm-5">
-											<input type="text" id="wineventTitle" name="content" class="col-xs-12" value="" placeholder="중요 어필 포인트" />
-										</div>
-									</div>
-									
-									<div class="space-4"></div>
-									
-									<div class="form-group">
-										<label class="col-sm-2 control-label no-padding-right" for="eventDetail"> 이벤트 요청 내용</label>
-
-										<div class="col-sm-5">
-											<textarea class="form-control" id="eventDetail" name="info" value="" placeholder="이벤트 내용 상세"></textarea>
-										</div>
-									</div>
-									
-									<div class="row">	
-										<!-- 이벤트 이미지 요청창 -->
-										<div class="col-sm-12">
-											 <div class="image fit">
-												 <img class="img-thumbnail" id="output" alt="eventboard image" items="" var="path" src=""/> 
+														<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+															<i class="ace-icon fa fa-angle-down bigger-110" data-icon-hide="ace-icon fa fa-angle-down" data-icon-show="ace-icon fa fa-angle-right"></i>
+															&nbsp;메뉴 #1
+														</a>
+													</h4>
 												</div>
-										</div>
-										
-									</div>
+												
+								<!-- 첫 인덱스는 반드시 class명 뒤에 in 필요! 각 클래스별 id값 다르니 주의!(id="collapseOne") -->
+								<div class="panel-collapse collapse in" id="collapseOne">
+									<div class="panel-body">
+										<div class="widget-main">
+											<div class="row">
+												<div class="col-xs-12 col-sm-6">
+													<div class="image fit">
+														<img class="img-thumbnail" id="output1" alt="menuboard #1 image" items="" var="path" src=""/> 
+													</div>
+												</div>
+												
+										<div class="col-xs-12 col-sm-6">
+											<div class="form-group">
+													<label for="menuTitle"> 메뉴명</label>
+													<div>
+														<input type="text" class="col-xs-10" name="menu_title" id="menuTitle" value="" placeholder="메뉴명 출력" />
+													</div>
+											</div>
 
+											<div class="form-group">
+													<label for="menuTitle"> 가격</label>
+													<div>
+														<input type="text" class="col-xs-10" name="menu_price" id="menuPrice" value="" placeholder="메뉴 가격 출력" />
+													</div>
+											</div>
+											
+											<div class="form-group">
+													<label for="menuDivision"> 메뉴분류</label>
+													<div>
+														<input type="text" class="col-xs-10" name="menuDivision" id="menuDivision" value="" placeholder="메뉴분류 출력" />
+													</div>
+											</div>
+											
+												<div class="form-group">
+													<label for="menuEtc"> 기타사항</label>
+													<div>
+														<input type="text" class="col-xs-10" id="menuEtc" name="menuEtc" placeholder="기타사항 출력 예) 원산지, 칼로리, 외국어표기 등" />
+													</div>
+												</div>
+											</div>
+										</div><!-- row 끝-->
+										
+									</div><!-- widget-main 끝-->
+								</div><!-- panel-body 끝-->
+								</div><!-- panel-collapse collapse in끝-->
+							</div><!-- panel panel-defult 끝-->
+							
+							
+							<div class="panel panel-defult"> <!-- forEach? -->
+								<div class="panel-heading">
+									<h4 class="panel-title">
+
+										<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+											<i class="ace-icon fa fa-angle-down bigger-110" data-icon-hide="ace-icon fa fa-angle-down" data-icon-show="ace-icon fa fa-angle-right"></i>&nbsp;메뉴 #2
+										</a>
+									</h4>
+								</div>
+									<!-- 두번째 인덱스부터는 class명 뒤에 in 필요없음! 각 클래스별 id값 다르니 주의!(id="collapseTwo") -->
+									<div class="panel-collapse collapse" id="collapseTwo">
+										<div class="panel-body">
+											<div class="widget-main">
+												<div class="row">
+													<div class="col-xs-12 col-sm-6">
+														<div class="image fit">
+															<img class="img-thumbnail" id="output2" alt="menuboard #2 image" items="" var="path" src=""/> 
+														</div>
+													</div>
+												
+										<div class="col-xs-12 col-sm-6">
+											<div class="form-group">
+													<label for="menuTitle"> 메뉴명</label>
+													<div>
+														<input type="text" class="col-xs-10" name="menu_title" id="menuTitle" value="" placeholder="메뉴명 출력" />
+													</div>
+											</div>
+
+											<div class="form-group">
+													<label for="menuTitle"> 가격</label>
+													<div>
+														<input type="text" class="col-xs-10" name="menu_price" id="menuPrice" value="" placeholder="메뉴 가격 출력" />
+													</div>
+											</div>
+											
+											<div class="form-group">
+													<label for="menuDivision"> 메뉴분류</label>
+													<div>
+														<input type="text" class="col-xs-10" name="menuDivision" id="menuDivision" value="" placeholder="메뉴분류 출력" />
+													</div>
+											</div>
+											
+												<div class="form-group">
+													<label for="menuEtc"> 기타사항</label>
+													<div>
+														<input type="text" class="col-xs-10" id="menuEtc" name="menuEtc" placeholder="기타사항 출력 예) 원산지, 칼로리, 외국어표기 등" />
+													</div>
+												</div>
+											</div>
+										</div><!-- row 끝-->
+										
+									</div><!-- widget-main 끝-->
+								</div><!-- panel-body 끝-->
+								</div><!-- panel-collapse collapse끝-->
+							</div><!-- panel panel-defult 끝-->
+							</div><!-- accordion-style1 panel-group 끝-->
+
+									
 									<div class="clearfix form-actions">
 										<div class="col-md-offset-3 col-md-9">
 											<a href="#" type="button" class="btn btn-info" role="button">
@@ -844,7 +909,6 @@
 		  <script src="assets/js/excanvas.min.js"></script>
 		<![endif]-->
 		<script src="assets/js/jquery-ui.custom.min.js"></script>
-		
 		<script src="assets/js/autosize.min.js"></script>
 		<script src="assets/js/jquery.inputlimiter.min.js"></script>
 
@@ -864,52 +928,6 @@
 				$('textarea.limited').inputlimiter({
 					remText: '%n character%s remaining...',
 					limitText: 'max allowed : %n.'
-				});
-			
-				$('#id-input-file-1 , #id-input-file-2').ace_file_input({
-					no_file:'No File ...',
-					btn_choose:'Choose',
-					btn_change:'Change',
-					droppable:false,
-					onchange:null,
-					thumbnail:false //| true | large
-					//whitelist:'gif|png|jpg|jpeg'
-					//blacklist:'exe|php'
-					//onchange:''
-					//
-				});
-				//pre-show a file name, for example a previously selected file
-				//$('#id-input-file-1').ace_file_input('show_file_list', ['myfile.txt'])
-				
-				$('#id-input-file-3').ace_file_input({
-					style: 'well',
-					btn_choose: 'Drop files here or click to choose',
-					btn_change: null,
-					no_icon: 'ace-icon fa fa-cloud-upload',
-					droppable: true,
-					thumbnail: 'small'//large | fit
-					//,icon_remove:null//set null, to hide remove/reset button
-					/**,before_change:function(files, dropped) {
-						//Check an example below
-						//or examples/file-upload.html
-						return true;
-					}*/
-					/**,before_remove : function() {
-						return true;
-					}*/
-					,
-					preview_error : function(filename, error_code) {
-						//name of the file that failed
-						//error_code values
-						//1 = 'FILE_LOAD_FAILED',
-						//2 = 'IMAGE_LOAD_FAILED',
-						//3 = 'THUMBNAIL_FAILED'
-						//alert(error_code);
-					}
-			
-				}).on('change', function(){
-					//console.log($(this).data('ace_input_files'));
-					//console.log($(this).data('ace_input_method'));
 				});
 				
 				//dynamically change allowed formats by changing allowExt && allowMime function
