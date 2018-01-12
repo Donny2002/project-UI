@@ -74,7 +74,7 @@
 
 			<button class="btn btn-primary" type="submit">수정하기 적용</button>
 			<button type="button" class="btn btn-danger" onclick="">취소</button>
-			<button type="button" class="btn btn-warning" name="" id="">목록으로</button> <!-- 클릭시 noticeboard.html의 <div clsss="container" id="main">으로 -->
+			<button type="button" class="btn btn-warning" name="" id="boardMain">목록으로</button> <!-- 클릭시 noticeboard.html의 <div clsss="container" id="main">으로 -->
 		</form>
 	</div>
 	
@@ -153,6 +153,17 @@
 												}
 											})
 						});
+		
+					
+		/*	목록으로 버튼 클릭 시 이동! 나중에 주석 풀고 경로 적어줘야 함!
+		$('#boardMain').click(function() { 
+			var result = confirm("게시판 처음화면으로 이동 하시겠습니까?"); 
+				if(result) { 
+					location.href = "이동경로"; => noticeboard.html <div clsss="container" id="main">위치로 이동 
+				} else { } 
+			});
+		*/				
+		
 	</script>
 	<script>
 		function logout() {
